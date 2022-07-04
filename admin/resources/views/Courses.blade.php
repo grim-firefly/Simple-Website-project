@@ -1,13 +1,14 @@
 @extends('Layout.app')
 @section('title')
-    Services
+    Courses
 @endsection
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <button type="submit" id="add-new-services"  data-toggle="modal" data-target="#AddModel" class="btn btn-secondary ml-5 mt-5" style="margin-bottom:-15px;">Add new</button>
+                <button type="submit" id="add-new-services" data-toggle="modal" data-target="#AddModel"
+                    class="btn btn-secondary ml-5 mt-5" style="margin-bottom:-15px;">Add new</button>
             </div>
         </div>
 
@@ -18,11 +19,11 @@
                     <table id="" class="table table-striped table-bordered" cellspacing="0" width="100%">
                         <thead>
                             <tr>
-                                <th class="th-sm">Image</th>
                                 <th class="th-sm">Name</th>
-                                <th class="th-sm">Description</th>
-                                <th class="th-sm">Edit</th>
-                                <th class="th-sm">Delete</th>
+                                <th class="th-sm">Fee</th>
+                                <th class="th-sm">Enroll</th>
+                                <th class="th-sm">class</th>
+                                <th class="th-sm">Options</th>
                             </tr>
                         </thead>
                         <tbody id="services_table">
@@ -118,10 +119,7 @@
                 </div>
             </div>
         </div>
-    @endsection
 
-    @section('Script')
-        <script type="text/javascript">
-            getservicesdata();
-        </script>
+
+	
     @endsection

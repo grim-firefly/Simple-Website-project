@@ -22,6 +22,7 @@
                     <li> <a href="index.html" ><span> <i class="fas fa-home"></i> </span><span class="hide-menu">Home</span></a></li>
                     <li> <a href="{{Route('Visitor')}}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
                     <li> <a href="{{Route('Services')}}" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Services</span></a></li>
+                    <li> <a href="{{Route('Courses.Index')}}" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Courses</span></a></li>
                 </ul>
             </nav>
         </div>
