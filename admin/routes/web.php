@@ -25,8 +25,24 @@ Route::post('/addservicedata',[ServicesController::class,'AddServiceData']);
 Route::name('Courses.')->prefix('courses')->group(function(){
 
     Route::get('',[CoursesController::class,'CourseIndex'])->name('Index');
+    Route::get('getdata',[CoursesController::class,'GetCourses'])->name('GetData');
+    Route::post('delete',[CoursesController::class,'DeleteCourse'])->name('delete');
+    Route::post('insert',[CoursesController::class,'InsertCourse'])->name('Insert');
+    Route::post('getcoursedata',[CoursesController::class,'GetCourseData'])->name('GetCourseData');
+    Route::post('updatecourse',[CoursesController::class,'UpdateCourse'])->name('Update');
+    
 
 });
+
+
+
+
+
+
+
+
+
+
 
 
 
