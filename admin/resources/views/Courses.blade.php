@@ -186,6 +186,7 @@
                 axios.get("{{ route('Courses.GetData') }}").then(function(response) {
                     var jsondata = response.data;
                     var service_list = '';
+
                     $.each(jsondata, function(key, value) {
                         service_list += '<tr>' + '<th class="th-sm">' + value.course_name + '</th>' +
                             '<th class="th-sm">' + value.course_fee + '</th>' +
@@ -217,7 +218,7 @@
                             confirmButtonText: 'Yes, delete it!'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                DeleteCourse(id, node);
+                                DeleteCourse(id);
 
                             }
                         })
@@ -255,7 +256,9 @@
                     });
 
 
-                    $('#CoursesTable').DataTable();
+                    $('#CoursesTable').DataTable({
+                        "order": false
+                    });
                     $('.dataTables_length').addClass('bs-select');
 
                 });
@@ -310,6 +313,7 @@
                     }
                 }).then(function(Response) {
                     if (Response.data.success == 'True') {
+                        $('#CoursesTable').DataTable().destroy();
                         getcoursesdata();
                         $('#AddModel').modal('toggle');
 
@@ -321,7 +325,7 @@
 
 
 
-            function DeleteCourse(id, node) {
+            function DeleteCourse(id) {
                 axios.post(" {{ route('Courses.delete') }} ", {
                     id: id
                 }).then(function(Response) {
@@ -331,7 +335,8 @@
                             'Your file has been deleted.',
                             'success'
                         )
-                        $(node).closest('tr').remove();
+                        $('#CoursesTable').DataTable().destroy();
+                        getcoursesdata();
                     } else {
                         'Canceled!',
                         'Your file has been deleted.',

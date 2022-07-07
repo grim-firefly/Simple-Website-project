@@ -14,7 +14,7 @@ class CoursesController extends Controller
 
     function GetCourses()
     {
-        $Courses = json_encode(CourseModel::all());
+        $Courses = json_encode(CourseModel::orderby('id','desc')->get());
         return $Courses;
     }
     function DeleteCourse(Request $request)

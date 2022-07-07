@@ -14,7 +14,7 @@ class ServicesController extends Controller
 
     function GetServicesData()
     {
-        $Services = json_encode(ServicesModel::all());
+        $Services = json_encode(ServicesModel::orderby('id','desc')->get());
         return $Services;
     }
     function DeleteServicesData(Request $request)

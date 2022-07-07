@@ -56,6 +56,8 @@ function getservicesdata() {
 			}).then((result) => {
 				if (result.isConfirmed) {
 					DeleteServices(id,node);
+					
+			
 		
 				}
 			})
